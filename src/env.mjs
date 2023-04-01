@@ -6,14 +6,18 @@ import { z } from "zod";
  */
 const server = z.object({
   DATABASE_URL: z.string().url(),
+  CLERK_SECRET_KEY: z.string(),
+  UPSTASH_REDIS_REST_TOKEN: z.string(),
+  UPSTASH_REDIS_REST_URL: z.string().url(),
   NODE_ENV: z.enum(["development", "test", "production"]),
 });
 
 /**
  * Specify your client-side environment variables schema here. This way you can ensure the app isn't
  * built with invalid env vars. To expose them to the client, prefix them with `NEXT_PUBLIC_`.
- */
+*/
 const client = z.object({
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string(),
   // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
 });
 

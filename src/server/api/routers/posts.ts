@@ -34,8 +34,6 @@ export const postsRouter = createTRPCRouter({
       }
     })
 
-    console.log(postWithUsers)
-
     return postWithUsers;
   }),
 
